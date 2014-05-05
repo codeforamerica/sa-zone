@@ -64,7 +64,5 @@ Open up app/controllers/addresses_controller.rb
 
 NOW DESCRIBE HOW TO ADD THIS JUNK.
 
-Let's check and see if this worked. Go ahead and find an address that you know is inside your new polygon. 
-
-### 
+Let's check and see if this worked. Go ahead and find an address that you know is inside your new polygon.  
 

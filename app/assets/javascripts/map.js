@@ -7,6 +7,8 @@ var historicDistrictLayer = L.mapbox.featureLayer()
 .addTo(map);
 var cosaDistrictLayer = L.mapbox.featureLayer(null, {fill: 'red'})
 .addTo(map);
+var consDistrictLayer = L.mapbox.featureLayer(null, {fill: 'green'})
+.addTo(map);
 
 var marker = L.marker(new L.LatLng(29.423889, -98.493056), {
       icon: L.mapbox.marker.icon({'marker-color': 'CC0033'}),
@@ -84,15 +86,36 @@ function updateMarker(d) {
         cosaDistrictLayer.setFilter(function() { return false; });
       }
 
+      var consDisStr = "";
+      var consDisStrPretty = "";
+      var consDistLegend = "";
+      var consDistColor = 'green'; // This is the color for the key
+      if (data.in_cons_district) {
+        var geoJSONcons = $.parseJSON(data.cons_district_polygon.st_asgeojson);
+        geoJSONcons.properties= {};
+        geoJSONcons.properties.fill = consDistColor;
+        consDistrictLayer.setGeoJSON(geoJSONcons);
+        consDistrictLayer.setFilter(function() { return true; });
+        consDisStr = "<br>COSA District: " + data.cons_district_polygon.district +
+                      "<br>City Council: " + data.cons_district_polygon.name;
+        consDisStrPretty =  "<p class=\"kicker\">Conservation District</p><p>" + data.cons_district_polygon.name + "</p>";
+        consDistLegend = "<li><span style='background:" + consDistColor + ";'></span>Conservation District</li>";
+        hasLegend = true;
+      }
+      else {
+        consDistrictLayer.setFilter(function() { return false; });
+      }
+
       // marker.setPopupContent("Address: " + data.address + cosaDisStr + histDisStr);
       $( "div.results-container" ).replaceWith( 
           "<div class=\"results-container\"><div class=\"results-inner\"><h3>This is what we know about this address:</h3><p class=\"kicker\">Address</p><p>" + 
-          data.address + "</p>" + cosaDisStrPretty + histDisStrPretty + "</div></div>" );
+          data.address + "</p>" + cosaDisStrPretty + histDisStrPretty + consDisStrPretty + "</div></div>" );
       if (hasLegend)
       {
         $("#legend-content").replaceWith("<div id='legend-content' style='display: none;'><ul class=\"ordering\">" +
           histDistLegend + 
           cosaDistLegend + 
+          consDistLegend +
           "</ul><div class='legend-source'>Source: <a href=\"http://www.sanantonio.gov/GIS\">San Antonio GIS Data</a></div></div>");
 
         console.log(document.getElementById('legend-content').innerHTML);

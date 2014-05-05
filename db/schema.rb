@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414080232) do
+ActiveRecord::Schema.define(version: 20140502223732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "conservation_districts", force: true do |t|
+    t.string   "name"
+    t.string   "ordinance"
+    t.string   "ordinance_date"
+    t.float    "shape_leng"
+    t.float    "shape_area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.spatial  "geom",           limit: {:srid=>0, :type=>"geometry"}
+  end
 
   create_table "cosa_council_districts", force: true do |t|
     t.integer  "district"
