@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.0.0'
 
 group :development, :test do
   gem 'rspec-rails', '2.14.2'
@@ -48,7 +48,7 @@ end
 # GIS 	
 gem 'rgeo', '0.3.20'
 gem 'rgeo-geojson', '0.2.3'
-gem 'activerecord-postgis-adapter', '1.0.0'
+gem 'activerecord-postgis-adapter', '0.6.5'
 gem 'rgeo-shapefile', '0.2.3'
 
 # Geocoding
