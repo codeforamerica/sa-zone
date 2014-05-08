@@ -64,6 +64,9 @@ gem 'fittextjs_rails'
 gem 'unicorn', '4.8.3'
 gem 'rack-timeout', '0.0.4'
 
+# Add foreman gem
+gem 'foreman', '0.66.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
