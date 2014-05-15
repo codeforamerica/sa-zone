@@ -4,10 +4,9 @@ class AddressesController < ApplicationController
 
     respond_to :html, :json
 
-    def index
+    def show
 
       @in_district = false
-
 
       if params[:address] != nil and !params[:address].empty?
         address = Geokit::Geocoders::MultiGeocoder.geocode params[:address]
@@ -41,4 +40,5 @@ class AddressesController < ApplicationController
                   }
       respond_with(@response)
     end
+
 end
