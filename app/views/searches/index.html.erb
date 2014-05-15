@@ -1,0 +1,33 @@
+<% content_for :head do %>
+  
+    <%= javascript_include_tag  "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js" %>
+    <%= stylesheet_link_tag     "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" %>
+
+<% end %>
+
+<div class="l-container">
+
+    <!-- home search box -->
+    <div class="search-container">
+        <div class="center">
+            <p><img class="home-logo" src="<%= image_path 'logo.png' %>"></p>
+
+            <p class="tagline">Love the place you live, inside and out</p>
+
+            <div class="address-box">
+                <form accept-charset="UTF-8" action="/addresses" method="get">
+                    <p><input id="address" placeholder="Type an address and hit enter to learn more" size="50" type="search" autofocus></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- home footer -->
+    <div class="home-footer reverse">
+        <p>A project by Code for America and the City of San Antonio.&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.sanantonio.gov/GIS/GISdata">Data provided by San Antonio GIS</a>.&nbsp;&nbsp;&nbsp;&nbsp;<a href="whatisurbanizado.techzans.com">Learn more</a>.</p>
+    </div>
+
+</div>
+
+
+<%= javascript_include_tag "addresses", "data-turbolinks-track" => true %>
