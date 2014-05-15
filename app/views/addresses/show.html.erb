@@ -1,0 +1,13 @@
+<% content_for :head do %>
+  
+    <%= javascript_include_tag  "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js" %>
+    <%= stylesheet_link_tag     "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" %>
+
+<% end %>
+
+<div class="results-container">
+    <p>Hi how are you.</p>
+</div>
+
+
+<%= javascript_include_tag "addresses", "data-turbolinks-track" => true %>
