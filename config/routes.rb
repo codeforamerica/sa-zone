@@ -8,7 +8,7 @@ Zone::Application.routes.draw do
   
   # Send root to search class
 
-  root 'searches#index'
+  root 'addresses#index'
 
   # Send form requests to address class
 
