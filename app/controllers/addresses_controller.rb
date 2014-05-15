@@ -41,7 +41,8 @@ class AddressesController < ApplicationController
                     :in_cosa_district       => @in_cosa_district,
                     :cosa_district_polygon  => @cosa_district_polygon
                   }
-      respond_with(@response)
+      #respond_with(@response)
+      render json: @response
     end
 
 end
