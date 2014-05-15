@@ -24,7 +24,7 @@ function ondragend() {
 function updateMarker(d) {
   $.ajax({
     type: 'GET',
-    url: '/',
+    url: '/addresses',
     data: d,
     dataType: 'json',
     success: function( data ) {
