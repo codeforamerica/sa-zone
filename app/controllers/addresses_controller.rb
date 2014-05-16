@@ -43,6 +43,8 @@ class AddressesController < ApplicationController
                     :addr                   => @addr
                   }
       respond_with(@response)
+      #for debugging
+      #render :json => { :foo => @cosa_district_polygon }
     end
 
 end

@@ -2,6 +2,7 @@
   
     <%= javascript_include_tag  "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js" %>
     <%= stylesheet_link_tag     "https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" %>
+    <%= javascript_include_tag  "http://use.typekit.net/njm7chh.js" %>
 
 <% end %>
 
@@ -30,16 +31,30 @@
 
     <!-- Display data cards -->
     <div class="d-container">
-        <!-- here -->
+        <div class="card-council d-card">
+            <div class="d-card-titlearea">
+                <hr>
+                <h2 class="d-card-title">City Council District</h2>
+            </div>
+            <div class="d-card-infoarea">
+                <p class="kicker">Council Representative</p>
+                <h3 class="d-card-big"><%= @response[:cosa_district_polygon][:name] %></h3>
+                <p class="kicker">Council District</p>
+                <h3 class="d-card-big">District <%= @response[:cosa_district_polygon][:district] %></h3>
+                <p class="d-card-footer">Data from San Antonio GIS</p>
+            </div>
+        </div>
     </div>
 
     <!-- Footer details -->
     <div class="d-footer">
         <img src="<%= image_path 'madebylogo.png' %>">
-        <p>A project by Code for America and the City of San Antonio. Data from the <a href="http://www.sanantonio.gov/GIS/GISdata">San Antonio GIS Portal</a>. This is for informational use only.</p>
-        <span class="footeritem"><p><a href="../howitsmade">How we made this</a></p></span>
-        <span class="footeritem"><p><a href="https://github.com/codeforamerica/homeroots">Form me on Github</a></p></span>
-        <span class="footeritem"><p><a href="mailto:sanantonio@codeforamerica.org">Send us your feedback</a></p></span>
+        <p>A project by Code for America and the City of San Antonio.<br />Data from the <a href="http://www.sanantonio.gov/GIS/GISdata">San Antonio GIS Portal</a>. This is for informational use only.</p>
+        <p>
+            <span class="menuitem"><a href="../howitsmade">How we made this</a></span>
+            <span class="menuitem"><a href="https://github.com/codeforamerica/homeroots">Form me on Github</a></span>
+            <span class="menuitem"><a href="mailto:sanantonio@codeforamerica.org">Send us your feedback</a></span>
+        </p>
     </div>
 
     </div>

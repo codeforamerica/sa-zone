@@ -183,9 +183,83 @@ a:hover
 {
     margin-right:20px;
 }
+.menuitem:last-of-type
+{
+    margin-right:0;
+}
 .d-big-address
 {
     text-align:center;
     padding-left:20px;
     padding-right:20px;
+}
+.d-footer
+{
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    text-align:center;
+    font-size:0.9em;
+}
+.d-footer img
+{
+    width:200px;
+}
+.d-container
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}
+
+// time to start styling our data cards
+.d-card
+{
+    background-color:#fff;
+    width:300px;
+}
+
+// data card titlearea : the color big type and such
+.d-card-titlearea 
+{
+    padding:20px 20px 10px 20px;
+    background-color:#BD4932;
+    color:white;
+}
+.d-card-titlearea hr
+{
+  width: 40%;
+  height: 5px;
+  background-color: white;
+  margin-left:0;
+  margin-bottom:-5px;
+}
+.d-card-titlearea h2
+{
+    font-size:1.8em;
+    font-weight:100;
+}
+
+// data card infoarea : the good stuff
+.d-card-infoarea
+{
+    padding:5px 20px 10px 20px;
+}
+.d-card-infoarea .kicker
+{
+    font-weight:900;
+    font-size:.8em;
+    text-transform:uppercase;
+    color:#BD4932;
+}
+.d-card-infoarea .d-card-big
+{
+    font-weight:100;
+    font-size:2em;
+    margin-top:-10px;
+}
+.d-card-infoarea .d-card-footer
+{
+    font-size:.8em;
 }
