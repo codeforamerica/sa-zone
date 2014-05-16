@@ -5,9 +5,43 @@
 
 <% end %>
 
-<div class="results-container">
-    <p>Results go here.</p>
-</div>
+    <div class="d-master">
 
+    <!-- Menu -->
+    <div class="d-menu-left">
+        <span class="menuitem"><a href="../">Return home</a></span>
+        <span class="menuitem"><a href="../about">Learn about this app</a></span>
+    </div>
+
+    <div class="d-menu-right">
+        <span class="menuitem"><a href="http://www.sanantonio.gov/GIS/GISdata">Download the data</a></span>
+        <span class="menuitem"><a href="http://opensatx.org">Join the brigade</a></span>
+    </div>
+
+    <!-- Logo -->
+    <div class="d-logo-container">
+        <p><img class="d-logo" src="<%= image_path 'logo.png' %>" /></p>
+    </div>
+
+    <!-- Display big address -->
+    <div class="d-big-address">
+        <h1><%= @response[:addr] %></h1>
+    </div>
+
+    <!-- Display data cards -->
+    <div class="d-container">
+        <!-- here -->
+    </div>
+
+    <!-- Footer details -->
+    <div class="d-footer">
+        <img src="<%= image_path 'madebylogo.png' %>">
+        <p>A project by Code for America and the City of San Antonio. Data from the <a href="http://www.sanantonio.gov/GIS/GISdata">San Antonio GIS Portal</a>. This is for informational use only.</p>
+        <span class="footeritem"><p><a href="../howitsmade">How we made this</a></p></span>
+        <span class="footeritem"><p><a href="https://github.com/codeforamerica/homeroots">Form me on Github</a></p></span>
+        <span class="footeritem"><p><a href="mailto:sanantonio@codeforamerica.org">Send us your feedback</a></p></span>
+    </div>
+
+    </div>
 
 <%= javascript_include_tag "addresses", "data-turbolinks-track" => true %>

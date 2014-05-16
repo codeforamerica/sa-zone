@@ -39,10 +39,10 @@ class AddressesController < ApplicationController
                     :in_hist_district       => @in_hist_district,
                     :hist_district_polygon  => @hist_district_polygon,
                     :in_cosa_district       => @in_cosa_district,
-                    :cosa_district_polygon  => @cosa_district_polygon
+                    :cosa_district_polygon  => @cosa_district_polygon,
+                    :addr                   => @addr
                   }
-      #respond_with(@response)
-      render json: @response
+      respond_with(@response)
     end
 
 end
